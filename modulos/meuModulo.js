@@ -1,5 +1,3 @@
-// arquivo: meuModulo.js
-
 function minhaFuncao() {
     console.log("Olá do meu módulo!");
     }
@@ -7,3 +5,5 @@ function minhaFuncao() {
     module.exports = {
     minhaFuncao: minhaFuncao
     };
+    
+    
