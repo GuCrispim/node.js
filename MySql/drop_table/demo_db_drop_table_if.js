@@ -9,7 +9,8 @@ var con = mysql.createConnection({
 
 con.connect(function(err) {
   if (err) throw err;
-  con.query("SELECT * FROM customers ORDER BY name DESC", function (err, result) {
+  var sql = "DROP TABLE IF EXISTS customers";
+  con.query(sql, function (err, result) {
     if (err) throw err;
     console.log(result);
   });
