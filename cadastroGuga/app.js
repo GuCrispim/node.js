@@ -217,7 +217,7 @@ app.post("/cadastroprod", (req, res) => {
   const produtos = { id, descricao, quantidade, valor };
   connection.query("INSERT INTO produtoss SET ?", produtos, (err, result) => {
     if (err) throw err;
-    console.log(`produtos ${nome} cadastrado com sucesso!`);
+    console.log(`produtos ${id} cadastrado com sucesso!`);
     res.redirect("/");
   });
 });
