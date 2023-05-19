@@ -17,36 +17,11 @@ const connection = mysql.createConnection({
 // Conexão com o banco de dados
 connection.connect();
 
-// Rota para exibir o formulário de consulta
-app.get('/consultaprod', (req, res) => {
-  res.send(`
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Consulta de produto</title>
-      </head>
-      <body>
-        <h1>Consulta de produto</h1>
-        <form method="POST" action="/produto">
-          <label for="id">id:</label>
-          <input type="text" id="id" name="id"><br><br>
-          <label for="endereco">Endereço:</label>
-          <input type="text" id="endereco" name="endereco"><br><br>
-          <button type="submit">Consultar</button>
-        </form>
-      </body>
-    </html>
-  `);
-});
-
 // Rota para processar a consulta
 app.post('/produtos', (req, res) => {
-  //const id = req.body.id;
-  const { id, descricao, quantidade, valor } = req.body;
-  //const endereco = req.body.endereco;
-  
+
   // Consulta no banco de dados
-  connection.query(`SELECT * FROM produtos WHERE id LIKE '%${id}%'`, (error, results, fields) => {
+  connection.query(`SELECT * FROM produtos`, (error, results, fields) => {
     if (error) throw error;
     
     // Exibição dos resultados
@@ -54,7 +29,7 @@ app.post('/produtos', (req, res) => {
       <!DOCTYPE html>
       <html>
         <head>
-          <title>produto</title>
+          <title>produtos</title>
           <style>
           table {
             border-collapse: collapse;
@@ -71,7 +46,7 @@ app.post('/produtos', (req, res) => {
           </style>
         </head>
         <body>
-          <h1>produto encontrados</h1>
+          <h1>produtos encontrados</h1>
           <table>
             <tr>
               <th>id</th>
