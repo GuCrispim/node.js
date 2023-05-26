@@ -27,11 +27,15 @@ app.get('/consultaprod', (req, res) => {
       </head>
       <body>
         <h1>Consulta de produto</h1>
-        <form method="POST" action="/produto">
+        <form method="POST" action="/produtos">
           <label for="id">id:</label>
           <input type="text" id="id" name="id"><br><br>
-          <label for="endereco">Endereço:</label>
-          <input type="text" id="endereco" name="endereco"><br><br>
+          <label for="descricao">descricao:</label>
+          <input type="text" id="descricao" name="descricao"><br><br>
+          <label for="quantidade">quantidade:</label>
+          <input type="text" id="quantidade" name="quantidade"><br><br>
+          <label for="valor">valor:</label>
+          <input type="text" id="valor" name="valor"><br><br>
           <button type="submit">Consultar</button>
         </form>
       </body>

@@ -282,9 +282,9 @@ app.get('/consultaprod', (req, res) => {
       <body>
         <h1>Consulta de produtos</h1>
         <form method="POST" action="/consultaprod">
-          <label for="nome">Nome:</label>
-          <input type="text" id="nome" name="nome"><br><br>
-          <button type="submit">Consultar</button>
+        <label for="id">id:</label>
+        <input type="text" id="id" name="id"><br><br>
+        <button type="submit">Consultar</button>
         </form>
       </body>
     </html>
